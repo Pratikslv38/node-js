@@ -1,9 +1,14 @@
-const http = require("http")
+var express = require('express');
+var app = express();
 
-const server = http.createServer((req, res) => {
-  res.end("Welcome to Devops");
+app.get('/', function (req, res) {
+  res.send('<h2><center>Welcome to  Valueadd SoftTech<center></h2>');
+  res.end();
 });
 
-server.listen(8000, "34.238.250.60", () => {
-  console.log("listening to the port no 8000"); 
-}); 
+var server = app.listen(3000, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
+});
