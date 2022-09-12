@@ -2,7 +2,8 @@ var express = require('express');
 var app = express();
 
 app.get('/', function (req, res) {
-  res.send('Welcome to Valueadd SoftTech!');
+  res.send('<h2><center>Welcome to  Valueadd SoftTech<center></h2>');
+  res.end();
 });
 
 var server = app.listen(3000, function () {
