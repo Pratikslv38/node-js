@@ -1,14 +1,14 @@
-var express = require('express');
-var app = express();
+#!/usr/bin/env sh
 
-app.get('/', function (req, res) {
-  res.send('<h2><center>Welcome to  Valueadd SoftTech<center></h2>');
-  res.end();
-});
 
-var server = app.listen(3000, function () {
-  var host = server.address().address;
-  var port = server.address().port;
 
-  console.log('Example app listening at http://%s:%s', host, port);
-});
+echo 'The following "npm" command runs your Node.js application'
+
+set -x
+npm start &
+sleep 1
+echo $! > .pidfile
+set +x
+
+echo 'Now you can'
+echo 'Visit http://ServerIp:3000 to see your Node.js application'
